@@ -41,6 +41,35 @@
   }
 
   /**
+   * Theme toggle (dark/light)
+   */
+  const themeToggle = select('#theme-toggle')
+  const setTheme = (theme) => {
+    const isLight = theme === 'light'
+    document.body.classList.toggle('light-theme', isLight)
+    if (themeToggle) {
+      const icon = themeToggle.querySelector('i')
+      if (icon) {
+        icon.className = isLight ? 'bx bx-sun' : 'bx bx-moon'
+      }
+      themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme')
+    }
+  }
+
+  const savedTheme = localStorage.getItem('site-theme')
+  if (savedTheme) {
+    setTheme(savedTheme)
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light'
+      setTheme(nextTheme)
+      localStorage.setItem('site-theme', nextTheme)
+    })
+  }
+
+  /**
    * Navbar links active state on scroll
    */
   let navbarlinks = select('#navbar .scrollto', true)
@@ -198,19 +227,21 @@
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  if (select('.portfolio-details-slider')) {
+    new Swiper('.portfolio-details-slider', {
+      speed: 500,
+      loop: true,
+      autoplay: {
+        delay: 4200,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+  }
 
   /**
    * Testimonials slider
@@ -246,7 +277,7 @@
    */
   window.addEventListener('load', () => {
     AOS.init({
-      duration: 1000,
+      duration: 850,
       easing: 'ease-in-out',
       once: true,
       mirror: false
