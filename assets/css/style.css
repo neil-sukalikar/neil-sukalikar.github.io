@@ -1,6 +1,7 @@
 :root {
   --bg-page: #0b1020;
   --bg-page-2: #131a33;
+  --bg-page-3: #0e1428;
   --bg-surface: rgba(255, 255, 255, 0.08);
   --bg-surface-solid: #121a2f;
   --text-primary: #f3f6ff;
@@ -16,6 +17,7 @@
 body.light-theme {
   --bg-page: #eef3fb;
   --bg-page-2: #f7f9ff;
+  --bg-page-3: #ffffff;
   --bg-surface: rgba(255, 255, 255, 0.92);
   --bg-surface-solid: #ffffff;
   --text-primary: #1b2540;
@@ -43,7 +45,7 @@ body {
   background:
     radial-gradient(circle at 15% 12%, rgba(79, 140, 255, 0.25), transparent 35%),
     radial-gradient(circle at 90% 15%, rgba(35, 213, 171, 0.16), transparent 30%),
-    linear-gradient(140deg, var(--bg-page) 0%, var(--bg-page-2) 50%, #0e1428 100%);
+    linear-gradient(140deg, var(--bg-page) 0%, var(--bg-page-2) 50%, var(--bg-page-3) 100%);
   line-height: 1.65;
 }
 
@@ -236,6 +238,58 @@ body.light-theme .nav-menu .active,
 body.light-theme .nav-menu .active:focus,
 body.light-theme .nav-menu li:hover > a {
   background: rgba(46, 108, 255, 0.16);
+}
+
+body.light-theme a {
+  color: #2b5fcc;
+}
+
+body.light-theme a:hover {
+  color: #1c47ad;
+}
+
+body.light-theme #header .profile h1 a,
+body.light-theme #header .profile h1 a:hover {
+  color: #12295f;
+}
+
+body.light-theme #header .profile .social-links a {
+  color: #2a3f72;
+  background: rgba(46, 108, 255, 0.08);
+  border-color: rgba(46, 108, 255, 0.22);
+}
+
+body.light-theme .hero-eyebrow {
+  color: #2d436f;
+  background: rgba(46, 108, 255, 0.08);
+  border-color: rgba(46, 108, 255, 0.2);
+}
+
+body.light-theme #hero p span {
+  color: #12295f;
+  border-bottom-color: #188d75;
+}
+
+body.light-theme .btn-secondary {
+  color: #1c386f;
+  background: rgba(46, 108, 255, 0.08);
+  border-color: rgba(46, 108, 255, 0.24);
+}
+
+body.light-theme .btn-secondary:hover {
+  color: #11254b;
+  background: rgba(46, 108, 255, 0.14);
+  border-color: rgba(46, 108, 255, 0.35);
+}
+
+body.light-theme .resume .resume-item h5 {
+  color: #1e3875;
+  background: rgba(46, 108, 255, 0.12);
+}
+
+body.light-theme .portfolio #portfolio-flters li.filter-active,
+body.light-theme .portfolio #portfolio-flters li:hover {
+  color: #ffffff;
 }
 
 #header .profile .social-links a {
